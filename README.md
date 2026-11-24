@@ -7,6 +7,8 @@ scroller, on an original 4-channel soundtrack, with the blinkenlights on the dru
 
 <img src="docs/img/overdrive.gif" width="480" alt="Plasma, twister and synthwave ground on the Gigatron">
 
+**Watch it with sound: https://youtu.be/jgWpHFhubRg**
+
 <img src="docs/img/scenes.png" alt="The eight scenes">
 
 ## Run it
