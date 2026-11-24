@@ -1,0 +1,20 @@
+# glink map overlay for the demo (on top of map 32k).
+# Full 256-byte "strip" pages (no code): 0x4c-0x4f and 0x5c-0x7f (40 pages), loadable by the GT1.
+# Code and data: the 96-byte holes of pages 0x08-0x4b and 0x50-0x5b, pages 2 to 5, page 6 below
+# the stack (0x640-0x6fc, the C stack grows down from 0x6fc). Data also in the visible part of pages that are never displayed: 0x1d-0x1f and
+# 0x38-0x4b. Displayed visible parts: 0x08-0x1b bar colours, 0x1c black, 0x20-0x37 boot text.
+# Pages 0x50-0x5b are used by the ROM Loader while loading: never preload their visible part.
+#
+# ------------size----addr----step----end------flags
+segments = [ (0x0060, 0x08a0, 0x0100, 0x4ca0, 'CDH'),
+             (0x0060, 0x50a0, 0x0100, 0x5ca0, 'CDH'),
+             (0x00fa, 0x0200, None,   None,   'cDH'),
+             (0x00fa, 0x0300, 0x0100, 0x0500, 'CDH'),
+             (0x0100, 0x0500, None,   None,   'cDH'),
+             (0x0040, 0x0600, None,   None,   'CDH'),
+             (0x00a0, 0x1d00, 0x0100, 0x2000, 'D'),
+             (0x00a0, 0x3800, 0x0100, 0x4c00, 'D'),
+             (0x00a0, 0x0800, 0x0100, 0x1d00, 'd'),
+             (0x00a0, 0x2000, 0x0100, 0x3800, 'd'),
+             (0x0100, 0x4c00, 0x0100, 0x5000, 'd'),
+             (0x0100, 0x5c00, 0x0100, 0x8000, 'd') ]

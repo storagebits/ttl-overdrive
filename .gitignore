@@ -1,0 +1,6 @@
+build/
+media/*.mp4
+tools/gtshot
+third_party
+.DS_Store
+__pycache__/
